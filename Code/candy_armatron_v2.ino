@@ -28,7 +28,7 @@ void setup() {
   // initialize serial communication at 115200 bits per second:
   Serial.begin(115200);
   //set the resolution to 12 bits (0-4096) (default)
-  //set the resolution to 10 bits (0-1024)
+  //set the resolution to 10 bits (0-1024) (using 10 bit ADC to improve linearity)
   analogReadResolution(10);
 
   // Allow allocation of all timers
@@ -50,9 +50,9 @@ void setup() {
   // using min/max of 500us and 2400us for micro servos used in arm-a-tron
   // for an accurate 0 to 180 sweep
   armServo1.attach(servo1Pin, 500, 2500);
-  armServo2.attach(servo2Pin, 500, 2400);
-  armServo3.attach(servo3Pin, 500, 2400);
-  armServo4.attach(servo4Pin, 500, 2400);
+  armServo2.attach(servo2Pin, 500, 2500);
+  armServo3.attach(servo3Pin, 500, 2500);
+  armServo4.attach(servo4Pin, 500, 2500);
 }
 
 void loop() {
