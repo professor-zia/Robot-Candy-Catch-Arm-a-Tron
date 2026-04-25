@@ -80,8 +80,8 @@ void loop() {
   servo3Pos = map(analogValue3, 0, 1024, 180, 0);
   armServo3.write(servo3Pos);
 
+// servo4 just opens or closes the gripper
 if (analogValue4 < 400) servo4Pos = 0;
 if (analogValue4 > 600) servo4Pos = 45;
-//  servo4Pos = map(analogValue4, 0, 1024, 0, 180);
   armServo4.write(servo4Pos);
 }
